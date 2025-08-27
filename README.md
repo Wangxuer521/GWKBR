@@ -19,6 +19,7 @@ test_id.txt: Individual IDs of the test set. A single column where each row repr
 Before running the program, the users needs to install the required packages (os, numpy, skopt, scikit-learn, scipy, etc.). Then, place the software and the example_data folder in the same directory. Enter the current directory and run the program by typing the command python GWKBR.py. For example:
 
 cd path/to/your/directory
+
 python GWKBR.py
 
 ## output files
