@@ -211,8 +211,8 @@ print("Start Gibbs Sampling!")
 sigma_a2_estimated = np.mean(thinned_sigma_a2_samples)
 sigma_e2_estimated = np.mean(thinned_sigma_e2_samples)
 
-with open('variance_components.txt', 'w') as w1:
-    w1.write('sigma_a2' + '\t' + str(sigma_a2_estimated) + '\n' + 'sigma_e2' + '\t' + str(sigma_e2_estimated) + '\n')
+#with open('variance_components.txt', 'w') as w1:
+    #w1.write('sigma_a2' + '\t' + str(sigma_a2_estimated) + '\n' + 'sigma_e2' + '\t' + str(sigma_e2_estimated) + '\n')
 
 # Train and predict using the best model
 best_model = BayesianCombinedKernelRidge(
@@ -228,4 +228,5 @@ y_test_pred = best_model.predict(X_test)
 pred_str = y_test_pred.astype(str)
 id_pred = np.column_stack((id_test, pred_str))
 np.savetxt('y_test_pred.txt', id_pred, fmt='%s %s', header='ID\tPrediction', comments='')
+
 print('End time:', datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S"), flush=True)
