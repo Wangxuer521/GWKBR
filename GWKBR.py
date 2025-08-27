@@ -902,9 +902,9 @@ if mean_score_KBR > mean_score_GWKBR:
         w1.write('kernel' + '\t' + 'unweighted-kernel' + '\n')
         for k, v in best_params_KBR.items():
             w1.write(str(k) + '\t' + str(v) + '\n')
-    with open('variance_components.txt', 'w') as w2:
-        w2.write('sigma_a2' + '\t' + str(sigma_a2_estimated_KBR) + '\n' + 
-                 'sigma_e2' + '\t' + str(sigma_e2_estimated_KBR) + '\n')
+    #with open('variance_components.txt', 'w') as w2:
+        #w2.write('sigma_a2' + '\t' + str(sigma_a2_estimated_KBR) + '\n' + 
+                 #'sigma_e2' + '\t' + str(sigma_e2_estimated_KBR) + '\n')
 else:
     print(f"GWKBR is better with mean score: {mean_score_GWKBR}")
     best_model_class = GWKBR_Model
@@ -913,9 +913,9 @@ else:
         w1.write('kernel' + '\t' + 'weighted-kernel' + '\n')
         for k, v in best_params_GWKBR.items():
             w1.write(str(k) + '\t' + str(v) + '\n')
-    with open('variance_components.txt', 'w') as w2:
-        w2.write('sigma_a2' + '\t' + str(sigma_a2_estimated_GWKBR) + '\n' + 
-                 'sigma_e2' + '\t' + str(sigma_e2_estimated_GWKBR) + '\n')
+    #with open('variance_components.txt', 'w') as w2:
+        #w2.write('sigma_a2' + '\t' + str(sigma_a2_estimated_GWKBR) + '\n' + 
+                 #'sigma_e2' + '\t' + str(sigma_e2_estimated_GWKBR) + '\n')
 
 # Train and predict using the best model
 if best_model_class == GWKBR_Model:
@@ -940,3 +940,4 @@ id_pred = np.column_stack((id_test, pred_str))
 np.savetxt('y_test_pred.txt', id_pred, fmt='%s', delimiter='\t', 
            header='ID\tPrediction', comments='')
 print('End time:', datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S"), flush=True)
+
