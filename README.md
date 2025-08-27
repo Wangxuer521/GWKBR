@@ -16,7 +16,7 @@ train_id.txt: Individual IDs of the training set. A single column where each row
 test_id.txt: Individual IDs of the test set. A single column where each row represents one individual, corresponding to the second column of the .fam file.
 
 ## Running command
-Before running the program, the users needs to install the required packages (os, numpy, skopt, scikit-learn, scipy, etc.). Then, place the software and the example_data folder in the same directory. Enter the current directory and run the program by typing the command python GWKBR.py. For example:
+Before running the program, the users needs to install the required packages (os, numpy, skopt, scikit-learn, scipy, etc.), as well as the PLINK and GEMMA software. Then, place the software and the example_data folder in the same directory. Enter the current directory and run the program by typing the command python GWKBR.py. For example:
 
 cd path/to/your/directory
 
