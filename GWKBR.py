@@ -578,7 +578,7 @@ def cross_validate_and_optimize_continuous(model_class, param_space, X_train, y_
                 weights=snp_weights, 
                 sigma_a2=sigma_a2_estimated_GWKBR, 
                 sigma_e2=sigma_e2_estimated_GWKBR
-                ),
+            ),
             param_space, 
             n_iter=50, 
             cv=5, 
@@ -591,7 +591,7 @@ def cross_validate_and_optimize_continuous(model_class, param_space, X_train, y_
             model_class(
                 sigma_a2=sigma_a2_estimated_KBR, 
                 sigma_e2=sigma_e2_estimated_KBR
-                ),
+            ),
             param_space, 
             n_iter=50, 
             cv=5, 
@@ -611,7 +611,7 @@ def cross_validate_and_optimize_binary(model_class, param_space, X_train, y_trai
                 weights=snp_weights, 
                 sigma_a2=sigma_a2_estimated_GWKBR, 
                 sigma_e2=sigma_e2_estimated_GWKBR
-                ),
+            ),
             param_space, 
             n_iter=50, 
             cv=5, 
@@ -624,7 +624,7 @@ def cross_validate_and_optimize_binary(model_class, param_space, X_train, y_trai
             model_class(
                 sigma_a2=sigma_a2_estimated_KBR, 
                 sigma_e2=sigma_e2_estimated_KBR
-                ),
+            ),
             param_space,
             n_iter=50, 
             cv=5, 
@@ -746,13 +746,13 @@ def cross_validate_model_selection(model_class, best_params, X_train, y_train, i
                 sigma_a2=sigma_a2_estimated_GWKBR, 
                 sigma_e2=sigma_e2_estimated_GWKBR, 
                 weights=snp_weights_cv
-                )
+            )
         else:
             model = model_class(
                 **best_params, 
                 sigma_a2=sigma_a2_estimated_KBR, 
                 sigma_e2=sigma_e2_estimated_KBR
-                )        
+            )        
 
         model.fit(X_train_1, y_train_1)
         y_val_pred = model.predict(X_val_1)
@@ -835,47 +835,47 @@ if trait_type == 'binary':
     param_space_KBR = {
         "gamma": Real(1e-8, 1e-3, prior="log-uniform"), 
         "lambda_": Real(0.1, 10, prior="log-uniform")
-        }
+    }
     best_params_KBR = cross_validate_and_optimize_binary(
         KBR_Model, 
         param_space_KBR, 
         X_train, y_train
-        )
+    )
            
     print("Optimizing GWKBR model...")
     param_space_GWKBR = {
         "gamma": Real(1e-8, 1e-3, prior="log-uniform"),
         "lambda_": Real(0.1, 10, prior="log-uniform")
-        }
+    }
     best_params_GWKBR = cross_validate_and_optimize_binary(
         GWKBR_Model, 
         param_space_GWKBR, 
         X_train, y_train, 
         snp_weights=snp_weights
-        )
+    )
 else: 
     print("Optimizing KBR model...")
     param_space_KBR = {
         "gamma": Real(1e-8, 1e-3, prior="log-uniform"),
         "lambda_": Real(0.1, 10, prior="log-uniform")
-        }
+    }
     best_params_KBR = cross_validate_and_optimize_continuous(
         KBR_Model, 
         param_space_KBR, 
         X_train, y_train
-        )
+    )
            
     print("Optimizing GWKBR model...")
     param_space_GWKBR = {
         "gamma": Real(1e-8, 1e-3, prior="log-uniform"), 
         "lambda_": Real(0.1, 10, prior="log-uniform")
-        }
+    }
     best_params_GWKBR = cross_validate_and_optimize_continuous(
         GWKBR_Model, 
         param_space_GWKBR,
         X_train, y_train, 
         snp_weights=snp_weights
-        )
+    )
 
 # Select the best model
 mean_score_KBR = cross_validate_model_selection(
@@ -884,7 +884,7 @@ mean_score_KBR = cross_validate_model_selection(
     X_train, y_train,
     id_train,
     "KBR"
-    )
+)
 mean_score_GWKBR = cross_validate_model_selection(
     GWKBR_Model, 
     best_params_GWKBR,
@@ -892,7 +892,7 @@ mean_score_GWKBR = cross_validate_model_selection(
     id_train,
     "GWKBR", 
     snp_weights=snp_weights
-    )
+)
 
 if mean_score_KBR > mean_score_GWKBR:
     print(f"KBR is better with mean score: {mean_score_KBR}")
@@ -927,13 +927,13 @@ if best_model_class == GWKBR_Model:
         sigma_a2=sigma_a2_estimated_GWKBR, 
         sigma_e2=sigma_e2_estimated_GWKBR, 
         weights=snp_weights
-        )
+    )
 else:
     best_model = best_model_class(
         **best_params, 
         sigma_a2=sigma_a2_estimated_KBR, 
         sigma_e2=sigma_e2_estimated_KBR
-        )
+    )
 best_model.fit(X_train, y_train)
 y_test_pred = best_model.predict(X_test)
 
@@ -943,3 +943,4 @@ id_pred = np.column_stack((id_test, pred_str))
 np.savetxt('y_test_pred.txt', id_pred, fmt='%s', delimiter='\t', 
            header='ID\tPrediction', comments='')
 print('End time:', datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S"), flush=True)
+
