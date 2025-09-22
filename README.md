@@ -9,7 +9,7 @@ We provided example code and toy datasets to illustrate how to use GWKBR for hyp
 ## Prepare files
 The prepare files include the following five files：
 
-all_genotypes.bed(bim/fam): Binary genotype files for all individuals (training and test sets). In the .fam file, the last column records the phenotype, with test-set individuals coded as −9.
+genotypes.bed(bim/fam): Binary genotype files for all individuals (training and test sets). In the .fam file, the last column records the phenotype, with test-set individuals coded as −9.
 
 train_id.txt: Individual IDs of the training set. A single column where each row represents one individual, corresponding to the second column of the .fam file. 
 
@@ -23,7 +23,7 @@ Example 1:
 ```
 GWKBR_CV_NJOBS=5 python GWKBR.py --train_id ./example_data/train_id.txt \
                                  --test_id ./example_data/test_id.txt \
-                                 --geno ./example_data/all_genotypes
+                                 --geno ./example_data/genotypes
 ```
 GWKBR_CV_NJOBS: Number of threads (1-5), with a default value of 3;
 
@@ -40,7 +40,7 @@ Example 2:
 ```
 python GWKBR.py --train_id ./example_data/train_id.txt \
                 --test_id ./example_data/test_id.txt \
-                --geno ./example_data/all_genotypes \
+                --geno ./example_data/genotypes \
                 --predict \
                 --model Kw (or K) \
                 --gamma 3.19e-6 \
