@@ -52,9 +52,9 @@ The --train_id, --test_id, and --geno parameters are described above;
 
 --model: Model type (K or Kw);
 
---gamma: Bandwidth parameter of the Gaussian kernel (floating-poing value, e.g., 3.19e-6)
+--gamma: Bandwidth parameter of the Gaussian kernel (floating-point type, e.g., 3.19e-6)
 
---lambda: Regularization parameter (floating-point value, e.g., 0.01)
+--lambda: Regularization parameter (floating-point type, e.g., 0.01)
 
 ## output files
 The output files will be stored in the results folder and include best_params.txt, variance_component.log.txt, y_test_pred.txt, gwas_snps and snp_weights.txt.
