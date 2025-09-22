@@ -17,6 +17,7 @@ test_id.txt: Individual IDs of the test set. A single column where each row repr
 
 ## Running command
 Before running the program, the users needs to install the required packages (os, numpy, skopt, scikit-learn, scipy, etc.), as well as the PLINK and GEMMA software. Then, navigate to the directory containing the GWKBR.py script and execute the program with different commands depending on the specific task. 
+
 ### Hyperparameter optimization, model selection, model training, and prediction
 Example 1:
 ```
@@ -25,8 +26,11 @@ GWKBR_CV_NJOBS=5 python GWKBR.py --train_id ./example_data/train_id.txt \
                                  --geno ./example_data/all_genotypes
 ```
 GWKBR_CV_NJOBS: Number of threads (1-5), with a default value of 3;
+
 --train_id: Path to the training set individual ID file;
+
 --test_id: Path to the test set individual ID file;
+
 --geno: Path to the genotype file (prefix).
 
 By default, the program performs the full procedure of hyperparameter optimization, model selection, model training, and prediction. To directly fit the model and perform prediction using predefined hyperparameters, the additional command-line arguments --predict, --model, --gamma, and --lambda must be specified, as illustrated below.
@@ -43,9 +47,13 @@ python GWKBR.py --train_id ./example_data/train_id.txt \
                 --lambda 0.01 
 ```
 The --train_id, --test_id, and --geno parameters are described above;
+
 --predict: indicates that the model will perform prediction based on the specified hyperparameters;
+
 --model: Model type (K or Kw);
+
 --gamma: Bandwidth parameter of the Gaussian kernel (floating-poing value, e.g., 3.19e-6)
+
 --lambda: Regularization parameter (floating-point value, e.g., 0.01)
 
 ## output files
