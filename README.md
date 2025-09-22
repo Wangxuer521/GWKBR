@@ -9,11 +9,11 @@ We provided example code and toy datasets to illustrate how to use GWKBR for hyp
 ## Prepare files
 The prepare files include the following five files：
 
-genotypes.bed(bim/fam): Binary genotype files for all individuals (training and test sets). In the .fam file, the last column records the phenotype, with test-set individuals coded as −9.
+.bed/.bim/.fam files: Binary genotype files for training and test sets individuals (e.g., genotypes.bed, genotypes.bim and genotypes.fam). In the .fam file, the last column records the phenotype, with test-set individuals coded as −9.
 
-train_id.txt: Individual IDs of the training set. A single column where each row represents one individual, corresponding to the second column of the .fam file. 
+Training set individual ID file (e.g., train_id.txt): A single column where each row represents one individual, corresponding to the second column of the .fam file. 
 
-test_id.txt: Individual IDs of the test set. A single column where each row represents one individual, corresponding to the second column of the .fam file.
+Test set individual ID file (e.g., test_id.txt): A single column where each row represents one individual, corresponding to the second column of the .fam file.
 
 ## Running command
 Before running the program, the users needs to install the required packages (os, numpy, skopt, scikit-learn, scipy, etc.), as well as the PLINK and GEMMA software. Then, navigate to the directory containing the GWKBR.py script and execute the program with different commands depending on the specific task. 
