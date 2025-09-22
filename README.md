@@ -35,7 +35,7 @@ GWKBR_CV_NJOBS: Number of threads (1-5), with a default value of 3;
 
 By default, the GWKBR program performs the full procedure of hyperparameter optimization, model selection, model training, and prediction. In addition, GWKBR can also directly fit the model and perform prediction using predefined hyperparameters, but the additional command-line arguments --predict, --model, --gamma, and --lambda need to be specified, as illustrated below.
 
-### Model fitting and prediction based on Kw (or K) model with known hyperparemeters
+### Model fitting and prediction based on Kw (or K) model with predefined hyperparemeters
 Example 2:
 ```
 python GWKBR.py --train_id ./example_data/train_id.txt \
