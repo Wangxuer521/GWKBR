@@ -2,8 +2,7 @@
 GWKBR is a novel genomic prediction method that integrates machine learning techniques (such as weighted Gaussian kernel regression and Bayesian optimization), Bayesian inference, genome-wide association study (GWAS) and cross-validation process.
 
 ## Tutorial and Examples
-We implemented GWKBR in Python 3.9. The software requires PLINK and GEMMA to be installed and their paths added to the system's environment variables.
-
+We implemented GWKBR in Python 3.9. Before running the software, PLINK and GEMMA need to be installed, and the path on line 978 of the script should be modified accordingly.
 We provided example code and toy datasets to illustrate how to use GWKBR for hyperparameter optimization and genomic prediction. Please check GWKBR.py to see how to run GWKBR on the toy example we provided in the example_data directory.
 
 ## Prepare files
