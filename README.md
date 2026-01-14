@@ -1,5 +1,5 @@
 # GWAS Weighted Kernel Bayesian Regression (GWKBR)
-GWKBR is a novel genomic prediction method that integrates machine learning techniques (such as weighted Gaussian kernel regression and Bayesian optimization), Bayesian inference, genome-wide association study (GWAS) and cross-validation process.
+GWKBR is a novel genomic prediction method that integrates machine learning techniques (such as weighted Gaussian kernel regression and Bayesian optimization), Bayesian inference, Restricted Maximum Likelihood (REML), genome-wide association study (GWAS), and cross-validation process.
 
 ## Tutorial and Examples
 We implemented GWKBR in Python 3.9. Before running the software, PLINK and GEMMA need to be installed, and the path on line 978 of the script should be modified accordingly.
