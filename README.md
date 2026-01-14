@@ -2,14 +2,14 @@
 GWKBR is a novel genomic prediction method that integrates machine learning techniques (such as weighted Gaussian kernel regression and Bayesian optimization), Bayesian inference, genome-wide association study (GWAS) and cross-validation process.
 
 ## Tutorial and Examples
-We implemented GWKBR in Python. Dependencies: python > 3.6.
+We implemented GWKBR in Python 3.9. The software requires PLINK and GEMMA to be installed and their paths added to the system's environment variables.
 
 We provided example code and toy datasets to illustrate how to use GWKBR for hyperparameter optimization and genomic prediction. Please check GWKBR.py to see how to run GWKBR on the toy example we provided in the example_data directory.
 
 ## Prepare files
 The prepare files include the following five files：
 
-.bed/.bim/.fam files: Binary genotype files for training and test sets individuals (e.g., genotypes.bed, genotypes.bim and genotypes.fam). In the .fam file, the last column records the phenotype, with test-set individuals coded as −9.
+.bed/.bim/.fam files: Binary genotype files for training and test sets individuals (e.g., genotypes.bed, genotypes.bim and genotypes.fam). In the .fam file, the last column records the phenotype, where individuals in the training set must have phenotype values, and individuals in the test-set are encoded with a phenotype value of -9.
 
 Training set individual ID file (e.g., train_id.txt): A single column where each row represents one individual, corresponding to the second column of the .fam file. 
 
