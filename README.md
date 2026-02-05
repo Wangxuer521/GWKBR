@@ -30,7 +30,7 @@ GWKBR_CV_NJOBS: Number of threads (1-5), with a default value of 3;
 
 --test_id: Path to the test set individual ID file;
 
---geno: Path to the genotype file (prefix).
+--geno: Path to the genotype file of all individuals (prefix).
 
 By default, the GWKBR program performs the full procedure of hyperparameter optimization, model selection, model training, and prediction. In addition, GWKBR can also directly fit the model and perform prediction using predefined hyperparameters, but the additional command-line arguments --predict, --model, --gamma, and --lambda need to be specified, as illustrated below.
 
